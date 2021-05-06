@@ -61,12 +61,30 @@ body{
 h2{
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
+    font-size: 16px;
 }
 h3{
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+    color: #a6a6a6;
+    font-size: 15px;
 }
 h4{
+    width: 144px;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    font-size: 16px;
+    margin: 0 35px 0 0;
+    display: flex;
+    justify-content: space-between;
+
+}
+.minus{
+    color: red;
+}
+.plus{
+    color: green;
+}
+.minus, .plus{
+    margin: 0 7px 0 7px;
 }
