@@ -3,7 +3,7 @@ import RenderOptions from './Renderoptions';
 
 
 
-export default function RenderMenus(){
+export default function RenderMenus(props){
 let foodOptions = [{name: "Frango Yin Yang", img:"imagens/frango.jpg"  , description: "um pouco de batata, um pouco de salada", price: "14.90"},
                   {name: "Lasanha Bolonhesa", img:"imagens/lasanha.jpg"  , description: "Bastante recheio, queijo delicioso", price: "23.90"},
                   {name: "Fritada de Presunto", img:"imagens/fritada.jpg"  , description: "Feita no azeite com bastante recheio", price: "18.90"},
@@ -20,11 +20,14 @@ let drinkOptions = [{name: "Coca-cola gelada", img:"imagens/coquinha.jpg"  , des
 let dessertOptions= [{name: "Pudim de leite", img:"imagens/pudim.jpg"  , description: "Tradicional pudim de leite da casa", price: "7.90"},
                   {name: "Brigadeiro", img:"imagens/brigadeiro.jpg"  , description: "50g do melhor brigadeiro da cidade", price: "4.00"},
                   {name: "Torta de limão", img:"imagens/tortadelimao.jpg"  , description: "Massa de biscoito, recheio de felicidade", price: "8.90"}];
-
+    
 
 let menuTittles = ["Primeiro, seu prato","Agora, sua bebida","Por fim, sua sobremesa"];
-
+let states = [props.setFood, props.setDrink, props.setDessert];
+let selection = [props.food, props.drink, props.dessert];
 let MenuOptions = [foodOptions, drinkOptions, dessertOptions];
+
+
     return(
         <div class="content">
         {MenuOptions.map((arrayatual, i) => 
@@ -32,7 +35,7 @@ let MenuOptions = [foodOptions, drinkOptions, dessertOptions];
         <h1>{menuTittles[i]}</h1>
         <div class="row">
             {arrayatual.map((itematual) => 
-            <RenderOptions name ={itematual.name} img = {itematual.img} description = {itematual.description} price ={itematual.price}/>
+            <RenderOptions  name ={itematual.name} img = {itematual.img} description = {itematual.description} price ={itematual.price} setState={states[i]} state = {selection[i]}/>
             )}
         </div>
         </>
